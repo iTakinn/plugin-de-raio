@@ -38,25 +38,26 @@ public class LightningStrike extends JavaPlugin implements Listener {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender.hasPermission("lightningstrike.raios") || sender.isOp()) {
-            if (args.length != 1) {
+            if (args.length == 1) {// se tiver argumento (player) chama ele
+                Player target = Bukkit.getPlayer(args[0]);
+                if (target == null) {
+                    sender.sendMessage("Jogador não encontrado.");
+                    return true;
+                }
+                toggleLightning(target);
+                return true;
+            } else if (args.length == 0) {// se nao tiver argumento (player) usa quem mandou o comando
+                toggleLightning(Bukkit.getPlayer(sender.getName()));
+                return true;
+            } else {
                 sender.sendMessage("Uso correto: /raios <player>");
                 return true;
             }
-    
-            Player target = Bukkit.getPlayer(args[0]);
-            if (target == null) {
-                sender.sendMessage("Jogador não encontrado.");
-                return true;
-            }
-    
-            toggleLightning(target);
-            return true;
-            
-        }else{
+        } else {
             sender.sendMessage("Você não tem permissão para usar este comando.");
             return true;
         }
-        
+
     }
 
     private void toggleLightning(Player player) {
@@ -67,7 +68,8 @@ public class LightningStrike extends JavaPlugin implements Listener {
             tasks.remove(playerId);
             player.sendMessage("Os raios foram desativados.");
         } else {
-            // Inicia uma tarefa que atinge o jogador com raios constantemente enquanto ele se move
+            // Inicia uma tarefa que atinge o jogador com raios constantemente enquanto ele
+            // se move
             BukkitRunnable task = new BukkitRunnable() {
                 @Override
                 public void run() {
