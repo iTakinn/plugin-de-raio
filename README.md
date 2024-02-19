@@ -1,4 +1,6 @@
 # plugin de jogar raio no player a cada tick
-- ainda nao tem permissao
+- Agora com permissao. so ver o plugin.yml
 - e é isso ai 👍
 ### uso: `/raios <player>`
+### uso: `/raiosolhar <player>`
+### uso: `/subir <player>`
