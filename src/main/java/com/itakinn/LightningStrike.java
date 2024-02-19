@@ -41,7 +41,7 @@ public class LightningStrike extends JavaPlugin implements Listener {
             if (args.length == 1) {// se tiver argumento (player) chama ele
                 Player target = Bukkit.getPlayer(args[0]);
                 if (target == null) {
-                    sender.sendMessage("Jogador não encontrado.");
+                    sender.sendMessage(args[0] + " não está online.");
                     return true;
                 }
                 toggleLightning(target);
