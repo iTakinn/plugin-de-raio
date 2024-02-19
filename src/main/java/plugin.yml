@@ -7,8 +7,22 @@ commands:
     description: Ativa ou desativa raios sobre um jogador
     usage: /raios <player>
     permission: lightningstrike.raios
+  raiosolhar:
+    description: Ativa ou desativa raios onde o jogador que estiver olhando
+    usage: /raiosolhar
+    permission: lightningstrike.raiosolhar
+  subir:
+    description: Teleporta o jogador para cima
+    usage: /subir
+    permission: lightningstrike.subir
 
 permissions:
   lightningstrike.raios:
     description: Permite que o jogador ative ou desative raios sobre outro jogador
+    default: op
+  lightningstrike.raiosolhar:
+    description: Permite que o jogador ative ou desative raios onde estiver olhando
+    default: op
+  lightiningstrike.subir:
+    description: Permite que o jogador se teleporte para cima
     default: op

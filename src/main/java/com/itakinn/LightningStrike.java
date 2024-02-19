@@ -21,6 +21,8 @@ public class LightningStrike extends JavaPlugin implements Listener {
     public void onEnable() {
         getLogger().info("Plugin LightningStrike habilitado!");
         getCommand("raios").setExecutor(this);
+        getCommand("raiosolhar").setExecutor(new RaiosOlhar(this));
+        getCommand("subir").setExecutor(new Subir(this));
         getServer().getPluginManager().registerEvents(this, this);
     }
 
@@ -38,13 +40,13 @@ public class LightningStrike extends JavaPlugin implements Listener {
         if (sender.hasPermission("lightningstrike.raios") || sender.isOp()) {
             if (args.length != 1) {
                 sender.sendMessage("Uso correto: /raios <player>");
-                return false;
+                return true;
             }
     
             Player target = Bukkit.getPlayer(args[0]);
             if (target == null) {
                 sender.sendMessage("Jogador não encontrado.");
-                return false;
+                return true;
             }
     
             toggleLightning(target);
@@ -52,7 +54,7 @@ public class LightningStrike extends JavaPlugin implements Listener {
             
         }else{
             sender.sendMessage("Você não tem permissão para usar este comando.");
-            return false;
+            return true;
         }
         
     }
@@ -80,7 +82,7 @@ public class LightningStrike extends JavaPlugin implements Listener {
             };
             task.runTaskTimer(this, 0, 1); // A cada segundo (20 ticks)
             tasks.put(playerId, task);
-            player.sendMessage("Os raios foram ativados. Mantenha-se em movimento!");
+            player.sendMessage("Os raios foram ativados!");
         }
     }
 
