@@ -6,3 +6,9 @@ commands:
   raios:
     description: Ativa ou desativa raios sobre um jogador
     usage: /raios <player>
+    permission: lightningstrike.raios
+
+permissions:
+  lightningstrike.raios:
+    description: Permite que o jogador ative ou desative raios sobre outro jogador
+    default: op

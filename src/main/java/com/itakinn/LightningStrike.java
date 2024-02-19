@@ -35,19 +35,26 @@ public class LightningStrike extends JavaPlugin implements Listener {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (args.length != 1) {
-            sender.sendMessage("Uso correto: /raios <player>");
+        if (sender.hasPermission("lightningstrike.raios") || sender.isOp()) {
+            if (args.length != 1) {
+                sender.sendMessage("Uso correto: /raios <player>");
+                return false;
+            }
+    
+            Player target = Bukkit.getPlayer(args[0]);
+            if (target == null) {
+                sender.sendMessage("Jogador não encontrado.");
+                return false;
+            }
+    
+            toggleLightning(target);
+            return true;
+            
+        }else{
+            sender.sendMessage("Você não tem permissão para usar este comando.");
             return false;
         }
-
-        Player target = Bukkit.getPlayer(args[0]);
-        if (target == null) {
-            sender.sendMessage("Jogador não encontrado.");
-            return false;
-        }
-
-        toggleLightning(target);
-        return true;
+        
     }
 
     private void toggleLightning(Player player) {
