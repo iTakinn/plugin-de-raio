@@ -1,0 +1,8 @@
+name: LightningStrike
+version: 1.0
+main: com.itakinn.LightningStrike
+author: iTakinn
+commands:
+  raios:
+    description: Ativa ou desativa raios sobre um jogador
+    usage: /raios <player>
