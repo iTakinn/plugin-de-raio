@@ -1,2 +1,15 @@
 zerv/*
 .vscode/settings.json
+target/*
+target/classes/plugin.yml
+target/classes/com/itakinn/LightningStrike.class
+target/classes/com/itakinn/LightningStrike$1.class
+target/classes/com/itakinn/RaiosOlhar.class
+target/classes/com/itakinn/RaiosOlhar$1.class
+target/classes/com/itakinn/Subir.class
+target/classes/plugin.yml
+target/classes/com/itakinn/LightningStrike.class
+target/classes/com/itakinn/LightningStrike$1.class
+target/classes/com/itakinn/RaiosOlhar.class
+target/classes/com/itakinn/RaiosOlhar$1.class
+target/classes/com/itakinn/Subir.class

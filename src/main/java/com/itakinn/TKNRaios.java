@@ -14,12 +14,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class LightningStrike extends JavaPlugin implements Listener {
+public class TKNRaios extends JavaPlugin implements Listener {
     private final Map<UUID, BukkitRunnable> tasks = new HashMap<>();
 
     @Override
     public void onEnable() {
-        getLogger().info("Plugin LightningStrike habilitado!");
+        getLogger().info("Plugin TKNRaios habilitado!");
         getCommand("raios").setExecutor(this);
         getCommand("raiosolhar").setExecutor(new RaiosOlhar(this));
         getCommand("subir").setExecutor(new Subir(this));
@@ -28,7 +28,7 @@ public class LightningStrike extends JavaPlugin implements Listener {
 
     @Override
     public void onDisable() {
-        getLogger().info("Plugin LightningStrike desabilitado!");
+        getLogger().info("Plugin TKNRaios desabilitado!");
         for (BukkitRunnable task : tasks.values()) {
             task.cancel();
         }
@@ -37,7 +37,7 @@ public class LightningStrike extends JavaPlugin implements Listener {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender.hasPermission("lightningstrike.raios") || sender.isOp()) {
+        if (sender.hasPermission("TKNRaios.raios") || sender.isOp()) {
             if (args.length == 1) {// se tiver argumento (player) chama ele
                 Player target = Bukkit.getPlayer(args[0]);
                 if (target == null) {

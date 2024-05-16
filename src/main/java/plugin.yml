@@ -1,28 +1,28 @@
-name: LightningStrike
+name: Raios
 version: 1.0
-main: com.itakinn.LightningStrike
+main: com.itakinn.TKNRaios
 author: iTakinn
 commands:
   raios:
     description: Ativa ou desativa raios sobre um jogador
     usage: /raios <player>
-    permission: lightningstrike.raios
+    permission: TKNRaios.raios
   raiosolhar:
     description: Ativa ou desativa raios onde o jogador que estiver olhando
     usage: /raiosolhar
-    permission: lightningstrike.raiosolhar
+    permission: TKNRaios.raiosolhar
   subir:
     description: Teleporta o jogador para cima
     usage: /subir
-    permission: lightningstrike.subir
+    permission: TKNRaios.subir
 
 permissions:
-  lightningstrike.raios:
+  TKNRaios.raios:
     description: Permite que o jogador ative ou desative raios sobre outro jogador
     default: op
-  lightningstrike.raiosolhar:
+  TKNRaios.raiosolhar:
     description: Permite que o jogador ative ou desative raios onde estiver olhando
     default: op
-  lightiningstrike.subir:
+  TKNRaios.subir:
     description: Permite que o jogador se teleporte para cima
     default: op

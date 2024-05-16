@@ -16,7 +16,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class Subir implements Listener, CommandExecutor {
-    private final Map<UUID, BukkitRunnable> tasksOlhar = new HashMap<>();
     private final JavaPlugin plugin;
 
     public Subir(JavaPlugin plugin) {
@@ -25,7 +24,7 @@ public class Subir implements Listener, CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender.hasPermission("lightningstrike.subir") || sender.isOp()) {
+        if (sender.hasPermission("TKNRaios.subir") || sender.isOp()) {
             if (args.length < 1) { // se argumento for menor de um (sem argumento) usa quem mandou o comando
                 subirPlayer(Bukkit.getPlayer(sender.getName()));
                 return true;

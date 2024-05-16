@@ -11,7 +11,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -25,7 +24,7 @@ public class RaiosOlhar implements Listener, CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender.hasPermission("lightningstrike.raiosolhar") || sender.isOp()) {
+        if (sender.hasPermission("TKNRaios.raiosolhar") || sender.isOp()) {
 
             if (args.length < 1) {
                 toggleLightningOlhar(Bukkit.getPlayer(sender.getName()));
